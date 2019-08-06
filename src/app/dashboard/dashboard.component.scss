@@ -1,9 +1,22 @@
-.toolbar {
-  height: 100px;
-  display: flex;
-}
+
 gridster {
   display: flex;
   height: calc(100vh - 115px);
   flex-direction: column;
+}
+
+
+.agent-table {
+  border-collapse: collapse;
+  width: 100%;
+  tr {
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: center;
+    }
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
 }

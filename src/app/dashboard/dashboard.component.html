@@ -2,9 +2,52 @@
   <h1>
     Dashboard
   </h1>
+  <button (click)="connect()">Connect</button>
+  <button (click)="disconnect()">Disconnect</button>
 </div>
 <gridster [options]="options">
-  <gridster-item [item]="item" *ngFor="let item of dashboard">
-    <!-- your content here -->
+  <gridster-item [item]="agentWidget">
+  <h2>Agent Widget</h2>
+    <div>
+      <table class="agent-table">
+        <tr>
+          <th>Name</th>
+          <th>Number</th>
+          <th>Status</th>
+          <th>Time in status</th>
+          <th>Time logged in</th>
+          <th>Total Calls</th>
+          <th>Effective calls</th>
+        </tr>
+        <tr *ngFor="let item of agents | keyvalue">
+          <!--<ng-container *ngIf="agents.key">-->
+          <td>{{item.value.name}}</td>
+          <td>{{item.value.number}}</td>
+          <td>{{item.value.status}}</td>
+          <td>{{item.value.inStatusTime}}</td>
+          <td>{{item.value.loggedInTime}</td>
+          <td>{{item.value.totalCalls}}</td>
+          <td>{{item.value.effectiveCalls}}</td>
+          <!--</ng-container>-->
+        </tr>
+      </table>
+    </div>
+  </gridster-item>
+  <gridster-item [item]="callWidget">
+    <h2>Call Widget</h2>
+    <div><table class="agent-table">
+      <tr>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Caller Number</th>
+        <th>Calling Number</th>
+      </tr>
+      <!--<tr *ngFor="let call of calls">-->
+        <!--<td>{{call.type}}</td>-->
+        <!--<td>{{call.status}}</td>-->
+        <!--<td>{{call.callerNumber}}</td>-->
+        <!--<td>{{call.callingNumber}}</td>-->
+      <!--</tr>-->
+    </table></div>
   </gridster-item>
 </gridster>
