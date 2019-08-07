@@ -20,3 +20,33 @@ gridster {
     background-color: #dddddd;
   }
 }
+
+tr {
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+  }
+}
+
+.summary-info-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  .item {
+    width: 45%;
+  }
+
+  .all-calls {
+
+  }
+}
+
+.red-bg{
+  background-color: red;
+}
+
+.blu-bg {
+  background-color: blue;
+}

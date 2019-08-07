@@ -1,7 +1,7 @@
 /* tslint:disable:variable-name */
 export class Agent {
 
-  private callStatuses = {
+  private readonly callStatuses = {
     IDLE: 'IDLE',
     IN_CALL: 'IN CALL',
     PAUSED: 'PAUSED'

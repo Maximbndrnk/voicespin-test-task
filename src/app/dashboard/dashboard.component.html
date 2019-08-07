@@ -32,20 +32,40 @@
     </div>
   </gridster-item>
   <gridster-item [item]="callWidget">
+    <div class="summary-info-container">
+      <div class="all-calls item">
+        <h1>Total amount of calls: {{ totalCallsSize }}</h1>
+      </div>
+      <div class="completed item">
+        <h1>Completed calls: {{ completedCallsSize }}</h1>
+      </div>
+    </div>
+
     <h2>Call Widget</h2>
-    <div><table class="agent-table">
+    <div>
+      <table>
       <tr>
         <th>Type</th>
         <th>Status</th>
         <th>Caller Number</th>
         <th>Calling Number</th>
+        <th>Time in Status</th>
       </tr>
-      <!--<tr *ngFor="let call of calls">-->
-        <!--<td>{{call.type}}</td>-->
-        <!--<td>{{call.status}}</td>-->
-        <!--<td>{{call.callerNumber}}</td>-->
-        <!--<td>{{call.callingNumber}}</td>-->
-      <!--</tr>-->
-    </table></div>
+      <tr *ngFor="let call of waitingCalls" class="red-bg">
+        <td>{{call.type}}</td>
+        <td>{{call.status}}</td>
+        <td>{{call.callerNumber}}</td>
+        <td>{{call.callingNumber}}</td>
+        <td>{{call.timeInStatus}} sec</td>
+      </tr>
+      <tr *ngFor="let call of activeCalls" class="blu-bg">
+        <td>{{call.type}}</td>
+        <td>{{call.status}}</td>
+        <td>{{call.callerNumber}}</td>
+        <td>{{call.callingNumber}}</td>
+        <td>{{call.timeInStatus}} sec</td>
+      </tr>
+    </table>
+    </div>
   </gridster-item>
 </gridster>
