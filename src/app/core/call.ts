@@ -6,7 +6,8 @@ export class Call {
     COMPLETED: 'COMPLETED'
   };
 
-  constructor(type, status, callerNumber, callingNumber) {
+  constructor({type, status, callerNumber, callingNumber, id}) {
+    this.id = id;
     this.type = type;
     this.status = status;
     this.callerNumber = callerNumber;
@@ -14,11 +15,11 @@ export class Call {
     this.startStatusTime = Date.now();
   }
 
+  id: string;
   type: string;
   status: string;
   callerNumber: string;
   callingNumber: string;
-  timeInStatus: number;
   startStatusTime: number;
 
 }

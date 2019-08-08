@@ -51,19 +51,19 @@
         <th>Calling Number</th>
         <th>Time in Status</th>
       </tr>
-      <tr *ngFor="let call of waitingCalls" class="red-bg">
-        <td>{{call.type}}</td>
-        <td>{{call.status}}</td>
-        <td>{{call.callerNumber}}</td>
-        <td>{{call.callingNumber}}</td>
-        <td>{{call.timeInStatus}} sec</td>
+      <tr *ngFor="let call of waitingCalls | keyvalue" class="red-bg">
+        <td>{{call.value.type}}</td>
+        <td>{{call.value.status}}</td>
+        <td>{{call.value.callerNumber}}</td>
+        <td>{{call.value.callingNumber}}</td>
+        <td>{{call.value | timePastPipe}}</td>
       </tr>
-      <tr *ngFor="let call of activeCalls" class="blu-bg">
-        <td>{{call.type}}</td>
-        <td>{{call.status}}</td>
-        <td>{{call.callerNumber}}</td>
-        <td>{{call.callingNumber}}</td>
-        <td>{{call.timeInStatus}} sec</td>
+      <tr *ngFor="let call of activeCalls | keyvalue" class="blu-bg">
+        <td>{{call.value.type}}</td>
+        <td>{{call.value.status}}</td>
+        <td>{{call.value.callerNumber}}</td>
+        <td>{{call.value.callingNumber}}</td>
+        <td>{{call.value | timePastPipe}}</td>
       </tr>
     </table>
     </div>
