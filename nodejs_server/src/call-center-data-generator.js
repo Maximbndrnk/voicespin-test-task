@@ -70,12 +70,15 @@ function getRandomAgent() {
 }
 
 function getRandomCall() {
-    return {
-        type: Math.round(Math.random()) ? 'IN' : 'OUT',
-        status: CALL_STATUSES.WAITING,
-        callerNumber: `38077000${String(Math.round(Math.random() * 1000)).padStart(4, '0')}`,
-        callingNumber: `38077000${String(Math.round(Math.random() * 1000)).padStart(4, '0')}`
-    };
+  let caller = `38077000${String(Math.round(Math.random() * 1000)).padStart(4, '0')}`;
+  let calling = `38077000${String(Math.round(Math.random() * 1000)).padStart(4, '0')}`;
+  return {
+    type: Math.round(Math.random()) ? 'IN' : 'OUT',
+    status: CALL_STATUSES.WAITING,
+    callerNumber: caller,
+    callingNumber: calling,
+    id: caller+calling
+  };
 }
 
 function getNormalizedAgents(agents) {
